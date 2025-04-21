@@ -2,8 +2,9 @@ name: Deploy Flutter Web to GitHub Pages
 
 on:
   push:
+    # Only on default branch
     branches:
-      - main
+      - master
 
 # Grant permissions for contents and pages write access (for gh-pages deployment)
 permissions:
