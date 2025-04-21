@@ -5,6 +5,11 @@ on:
     branches:
       - main
 
+# Grant permissions for contents and pages write access (for gh-pages deployment)
+permissions:
+  contents: write
+  pages: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
