@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dummy_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,6 +32,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      routes: {
+        '/dummy': (context) => const DummyPage(),
+      },
     );
   }
 }
@@ -108,6 +112,13 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/dummy');
+              },
+              child: const Text('Go to Dummy Page'),
             ),
           ],
         ),
